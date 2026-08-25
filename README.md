@@ -62,3 +62,22 @@ Send a DELETE request with the book ID to remove a book.
 Book images are uploaded using Multer and stored in the `uploads` folder.
 
 The image path is saved with the book data in MongoDB.
+
+
+## Authentication
+
+The API uses JWT authentication.
+
+### Signup
+Create a new user using:
+POST /api/v1/auth/signup
+
+### Login
+Login using:
+POST /api/v1/auth/login
+
+The login response returns a JWT token.
+
+Protected book routes require the token in the Authorization header:
+
+Authorization: Bearer <token>
